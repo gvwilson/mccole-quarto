@@ -1,0 +1,37 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "FIXME"
+  repo-url: "FIXME"
+  repo-actions: [edit, source, issue]
+  chapters:
+    - index.qmd
+    - intro/index.qmd
+    - finale/index.qmd
+  appendices:
+    - license/index.qmd
+    - conduct/index.qmd
+    - contributing/index.qmd
+    - bibliography/index.qmd
+    - glossary/index.qmd
+
+bibliography: bibliography/references.bib
+csl: mccole/book.csl
+
+filters:
+  - mccole/links.lua
+
+shortcodes:
+  - mccole/glossary.lua
+  - mccole/inc-noh1.lua
+
+format:
+  html:
+    css: mccole/book.css
+    link-citations: true
+    theme: cosmo
+    toc: true
+  pdf:
+    documentclass: mccole/krantz

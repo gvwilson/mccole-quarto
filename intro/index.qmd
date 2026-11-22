@@ -1,4 +1,0 @@
----
-subtitle: "what this training does and doesn't cover"
----
-# Introduction

@@ -1,9 +1,0 @@
----
-nocite: |
-  @*
----
-
-# Bibliography
-
-::: {#refs}
-:::

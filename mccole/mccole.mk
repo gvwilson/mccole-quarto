@@ -1,27 +1,32 @@
-.PHONY: commands site serve check bib clean pdf
+# Shared build targets for Mccole Quarto projects.
+# Include in the project's Makefile with:
+#
+#     include mccole/mccole.mk
 
-BIB=bibliography/references.bib
-BIN=mccole
-DOCS=docs
-LUA=pandoc lua
-LINKS=mccole/links.md
-GLOSSARY=glossary/index.qmd
-MD_SRC=$(wildcard *.qmd) $(wildcard */*.qmd)
-QUARTO=quarto
-SLIDES_SRC=$(wildcard slides.qmd) $(wildcard */slides.qmd)
-SLIDES_DST=$(patsubst %.qmd,${DOCS}/%.html,${SLIDES_SRC})
-SLIDES_FLAGS=\
+.PHONY: commands site serve check bib clean pdf update-mccole
+
+BIB ?= bibliography/references.bib
+BIN = mccole
+DOCS = docs
+LUA = pandoc lua
+LINKS ?= config/links.md
+GLOSSARY ?= glossary/index.qmd
+QUARTO = quarto
+TYPOS_CONFIG ?= config/typos.toml
+SLIDES_EXTRA ?=
+
+MD_SRC = $(wildcard *.qmd) $(wildcard */*.qmd)
+SLIDES_SRC = $(wildcard slides.qmd) $(wildcard */slides.qmd)
+SLIDES_DST = $(patsubst %.qmd,${DOCS}/%.html,${SLIDES_SRC})
+SLIDES_FLAGS = \
   -f markdown \
   -t revealjs \
   -s \
-  -M suppress-bibliography=true \
   -V theme=simple \
   -V slideNumber=true \
-  --citeproc \
-  --bibliography=${BIB} \
-  --csl=mccole/slides.csl \
   --css=mccole/slides.css \
-  --lua-filter=mccole/inc-pandoc.lua
+  --lua-filter=mccole/inc-pandoc.lua \
+  ${SLIDES_EXTRA}
 
 ## commands: show available commands (*)
 commands:
@@ -49,7 +54,13 @@ serve:
 publish:
 	${LUA} ${BIN}/publish.lua docs ${OUT} ${EXTRA}
 
-## slides: rebuild just the slides
+## update-mccole: refresh mccole/ from the mcq remote
+update-mccole:
+	git fetch mcq
+	rm -rf mccole
+	git checkout mcq/main -- mccole
+
+## slides: rebuild the slides using Pandoc
 slides: ${SLIDES_DST}
 
 ${DOCS}/%.html: %.qmd
@@ -77,7 +88,7 @@ check-glossary:
 
 ## check-typos: check spelling
 check-typos:
-	@typos -c mccole/typos.toml ${MD_SRC} ${SLIDES_SRC}
+	@typos -c ${TYPOS_CONFIG} ${MD_SRC} ${SLIDES_SRC}
 
 ## clean: remove generated and cache files
 clean:

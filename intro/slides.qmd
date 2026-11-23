@@ -14,3 +14,9 @@ format: revealjs
 ## Second Slide
 
 -   Say more things
+
+Math: $\sqrt{x^2 + y^2}$
+
+{{< inc intro/example.py >}}
+
+{{< inc intro/example.sql >}}

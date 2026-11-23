@@ -7,6 +7,15 @@ Bibliographic citation: [@Haberman2023]
 
 Math: $\sqrt{x^2 + y^2}$
 
+{{< inc intro/example.py >}}
+
+{{< inc intro/example.sql >}}
+
+{{< inc intro/example.sh >}}
+
+{{< inc intro/example.out >}}
+
+
 ## Subtitle
 
 [slides](slides.html)

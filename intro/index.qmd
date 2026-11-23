@@ -3,7 +3,9 @@ subtitle: "what this training does and doesn't cover"
 ---
 # Introduction
 
-[@Haberman2023]
+Bibliographic citation: [@Haberman2023]
+
+Math: $\sqrt{x^2 + y^2}$
 
 ## Subtitle
 

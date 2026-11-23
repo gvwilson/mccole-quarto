@@ -1,8 +1,7 @@
 # McCole
 
-Shared build files for a family of Quarto-based books. This repo holds only the
-files common to all projects; each project keeps its own content and per-project
-configuration.
+Shared build files for a family of Quarto-based books, plus a
+self-testing example site at the repo root.
 
 ## Using this repo
 
@@ -15,8 +14,12 @@ The shared files live in `mccole/`:
   chapters, appendices, bibliography).
 - Lua filters/shortcodes, CSS, and citation styles used by every project.
 
-Project-specific files (bibliography, `links.md`, `typos.toml`) live in each
-project's `config/` directory, not here.
+A project adds this repo as a git remote (`git remote add mcq <url>`) and
+refreshes `mccole/` with `make update-mccole`.
 
-A minimal demonstration site exercising every feature lives in the
-https://github.com/gvwilson/mcq-example repository.
+Project-specific files (bibliography, `links.md`, `typos.toml`) live in
+each project's `config/` directory, not here.
+
+The site content at the repo root (`index.qmd` and the chapter
+directories) is a minimal demonstration site that exercises every feature
+of the shared base; build it with `make site`.

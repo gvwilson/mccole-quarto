@@ -151,6 +151,17 @@ pre {
   margin: 1rem 0;
 }
 
+.note::before {
+  content: "Note";
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.note[data-title]::before {
+  content: attr(data-title);
+}
+
 .note > :first-child {
   margin-top: 0;
 }

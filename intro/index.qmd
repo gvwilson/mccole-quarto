@@ -3,6 +3,12 @@ subtitle: "what this training does and doesn't cover"
 ---
 # Introduction
 
+::: {.syllabus}
+- First point of syllabus.
+- Second point.
+- Third.
+:::
+
 Bibliographic citation: [@Haberman2023]
 
 Math: $\sqrt{x^2 + y^2}$
@@ -19,9 +25,9 @@ Math: $\sqrt{x^2 + y^2}$
 
 [slides](slides.html)
 
-::: {.callout-note}
+::: {.note}
 
-This is a `.callout-note`.
+This is a note.
 
 :::
 

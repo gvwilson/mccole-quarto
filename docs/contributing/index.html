@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head><meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Contributing</title>
+  <link rel="stylesheet" href="../mccole/mccole-book.css">
+
+</head>
+<body>
+<header class="topbar">
+  <nav class="topnav">
+    <a class="topnav-item" href="../index.html">Home</a>
+    <div class="topnav-dropdown">
+      <span class="topnav-item">Chapters</span>
+      <div class="topnav-menu"><ul class="topnav-list"><li><a href="../intro/index.html">Introduction</a></li><li><a href="../finale/index.html">Conclusion</a></li></ul></div>
+    </div>
+    <div class="topnav-dropdown">
+      <span class="topnav-item">Appendices</span>
+      <div class="topnav-menu"><ul class="topnav-list"><li><a href="../license/index.html">License</a></li><li><a href="../conduct/index.html">Code of Conduct</a></li><li><a href="../contributing/index.html">Contributing</a></li><li><a href="../bibliography/index.html">Bibliography</a></li><li><a href="../glossary/index.html">Glossary</a></li></ul></div>
+    </div>
+    <div class="topnav-dropdown">
+      <span class="topnav-item">Contents</span>
+      <div class="topnav-menu"><ul>
+<li><a href="#contributors" id="toc-contributors"><span class="header-section-number">C.1</span> Contributors</a></li>
+<li><a href="#setup-and-operation" id="toc-setup-and-operation"><span class="header-section-number">C.2</span> Setup and Operation</a></li>
+<li><a href="#structure" id="toc-structure"><span class="header-section-number">C.3</span> Structure</a></li>
+<li><a href="#faq" id="toc-faq"><span class="header-section-number">C.4</span> FAQ</a></li>
+</ul></div>
+    </div>
+  </nav>
+</header>
+<main class="content"><header id="title-block-header" class="quarto-title-block"></header>
+<h1 class="title">Contributing</h1>
+<p>Contributions are very welcome; please contact us <a href="mailto:gvwilson@third-bit.com">by email</a> or by filing an issue in <a href="https://github.com/gvwilson/mrsp">our repository</a>. All contributors must abide by our Code of Conduct.</p>
+<h2 data-number="C.1" id="contributors"><span class="header-section-number">C.1</span> Contributors</h2>
+<p><em><a href="https://third-bit.com/">Greg Wilson</a></em> is a programmer, author, and educator based in Toronto. He was the co-founder and first Executive Director of Software Carpentry and received ACM SIGSOFT’s Influential Educator Award in 2020.</p>
+<h2 data-number="C.2" id="setup-and-operation"><span class="header-section-number">C.2</span> Setup and Operation</h2>
+<ul>
+<li>Install <a href="https://quarto.org/">Quarto</a> to build the site.</li>
+<li>Run <code>make</code> on its own to see a list of common commands.</li>
+</ul>
+<h2 data-number="C.3" id="structure"><span class="header-section-number">C.3</span> Structure</h2>
+<ul>
+<li>Lessons are in <code>slug</code> directories (e.g., <code>intro/</code>, <code>health/</code>)
+<ul>
+<li>Each lesson has an <code>index.qmd</code> file containing its content</li>
+</ul></li>
+<li><code>_quarto.yml</code> configures the book and chapter order</li>
+<li><code>bibliography/references.bib</code> holds the bibliography in BibTeX format
+<ul>
+<li>Cite entries with <code>[@Key]</code> (e.g., <code>[@Aurora2019]</code>)</li>
+</ul></li>
+<li><code>glossary/index.qmd</code> holds the glossary as a definition list
+<ul>
+<li>Reference terms with <code>"display text"</code></li>
+</ul></li>
+</ul>
+<h2 data-number="C.4" id="faq"><span class="header-section-number">C.4</span> FAQ</h2>
+<dl>
+<dt>Do you need any help?</dt>
+<dd>
+Yes—please see the issues in <a href="https://github.com/gvwilson/mrsp">our repository</a>.
+</dd>
+<dt>What sort of feedback would be useful?</dt>
+<dd>
+Everything is welcome, from pointing out mistakes in the code to suggestions for better explanations.
+</dd>
+<dt>Can I add a new section?</dt>
+<dd>
+Absolutely, but please <a href="mailto:gvwilson@third-bit.com">reach out</a> before doing so.
+</dd>
+<dt>Why is this material free to read?</dt>
+<dd>
+Because if we all give a little, we all get a lot.
+</dd>
+</dl>
+
+</main>
+
+
+</body></html>

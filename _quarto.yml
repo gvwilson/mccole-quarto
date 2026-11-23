@@ -1,0 +1,15 @@
+metadata-files:
+  - mccole/mccole.yml
+
+book:
+  title: "McCole Quarto Template"
+  chapters:
+    - index.qmd
+    - intro/index.qmd
+    - finale/index.qmd
+  appendices:
+    - license/index.qmd
+    - conduct/index.qmd
+    - contributing/index.qmd
+    - bibliography/index.qmd
+    - glossary/index.qmd

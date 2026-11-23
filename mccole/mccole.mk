@@ -26,6 +26,7 @@ SLIDES_FLAGS = \
   -V slideNumber=true \
   --css=mccole/mccole-slides.css \
   --mathjax \
+  --syntax-highlighting=tango \
   --lua-filter=mccole/inc-pandoc.lua \
   ${SLIDES_EXTRA}
 

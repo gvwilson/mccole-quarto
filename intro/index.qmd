@@ -15,10 +15,15 @@ Math: $\sqrt{x^2 + y^2}$
 
 {{< inc intro/example.out >}}
 
-
 ## Subtitle
 
 [slides](slides.html)
+
+::: {.callout-note}
+
+This is a `.callout-note`.
+
+:::
 
 ### Sub-subtitle
 

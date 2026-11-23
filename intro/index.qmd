@@ -21,6 +21,20 @@ Math: $\sqrt{x^2 + y^2}$
 
 {{< inc intro/example.out >}}
 
+## Columns
+
+::: {.row}
+::: {.col-4}
+left
+:::
+::: {.col-4 .center}
+middle
+:::
+::: {.col-4 .right}
+right
+:::
+:::
+
 ## Subtitle
 
 [slides](slides.html)

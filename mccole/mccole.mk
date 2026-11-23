@@ -25,6 +25,7 @@ SLIDES_FLAGS = \
   -V theme=simple \
   -V slideNumber=true \
   --css=mccole/mccole-slides.css \
+  --mathjax \
   --lua-filter=mccole/inc-pandoc.lua \
   ${SLIDES_EXTRA}
 

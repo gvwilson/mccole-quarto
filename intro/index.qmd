@@ -9,6 +9,11 @@ subtitle: "what this training does and doesn't cover"
 - Third.
 :::
 
+> A quotation.
+> <cite>author</cite>
+
+## Elements
+
 Bibliographic citation: [@Haberman2023]
 
 Math: $\sqrt{x^2 + y^2}$

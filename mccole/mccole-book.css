@@ -109,6 +109,12 @@ dd {
   margin: 0 0 0 1rem;
 }
 
+/* Bibliography */
+.hanging-indent .csl-entry {
+  margin-left: 2em;
+  text-indent: -2em;
+}
+
 div.syllabus {
   background: #f5f5f5;
   border: 1px solid #d0d0d0;

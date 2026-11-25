@@ -45,6 +45,10 @@ nav.topnav {
   cursor: default;
 }
 
+.topnav-item.source {
+  margin-left: auto;
+}
+
 a.topnav-item:hover {
   background: #e9ecef;
 }

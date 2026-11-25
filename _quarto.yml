@@ -3,6 +3,7 @@ metadata-files:
 
 book:
   title: "McCole Quarto Template"
+  repo-url: https://github.com/gvwilson/mccole-quarto
   chapters:
     - index.qmd
     - intro/index.qmd

@@ -1,5 +1,5 @@
--- check-a11y.lua — basic accessibility checks on the generated HTML.
--- Usage: lua check-a11y.lua HTML_FILE...
+-- check-html.lua — basic accessibility checks on the generated HTML.
+-- Usage: lua check-html.lua HTML_FILE...
 -- Parses each file with pandoc.read(_, "html") and reports:
 --   * headings that skip a level
 --   * images with no alt text (unless role=presentation or aria-hidden)
@@ -10,10 +10,10 @@ local script_dir = arg[0] and arg[0]:match("^(.*)/") or "."
 package.path = script_dir .. "/?.lua;" .. package.path
 
 local utils = require("utils")
-utils.program = "check-a11y.lua"
+utils.program = "check-html.lua"
 
 if #arg < 1 then
-  utils.fail("usage: lua check-a11y.lua HTML_FILE...")
+  utils.fail("usage: lua check-html.lua HTML_FILE...")
 end
 
 local ARIA_REF = { ["aria-labelledby"] = true, ["aria-describedby"] = true,

@@ -66,6 +66,14 @@ local function book_title(yaml)
   return yaml:match("title:%s*(%S+)") or "Home"
 end
 
+local function book_repo_url(yaml)
+  local u = yaml:match('repo%-url:%s*"([^"]*)"')
+  if u then return u end
+  u = yaml:match("repo%-url:%s*'([^']*)'")
+  if u then return u end
+  return yaml:match("repo%-url:%s*(%S+)")
+end
+
 local function build_list(project_dir, paths, prefix)
   local items = {}
   for _, path in ipairs(paths) do
@@ -126,6 +134,10 @@ function Pandoc(doc)
 
     doc.meta.home = prefix .. "index.html"
     doc.meta.heading = heading
+    local source = book_repo_url(yaml)
+    if source then
+      doc.meta.source = source
+    end
     doc.meta.chapters = pandoc.RawBlock("html", build_list(project_dir, menu_chapters, prefix))
     doc.meta.appendices = pandoc.RawBlock("html", build_list(project_dir, appendices, prefix))
 

@@ -1,5 +1,6 @@
--- inc-quarto.lua — the {{< inc ... >}} shortcode for Quarto (the book).
--- Shared helpers live in inc-utils.lua.
+--
+-- Expand {{< inc ... >}} shortcodes in Quarto pages.
+--
 
 local dir = quarto.project.directory or "."
 local U = dofile(dir .. "/mccole/inc-utils.lua")

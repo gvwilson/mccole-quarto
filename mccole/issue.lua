@@ -1,7 +1,7 @@
--- Issue reference shortcode.
 --
+-- Refer to an issue in the GitHub repository.
 -- Usage: {{< issue 123 >}}
--- Renders a link to the issue in the book's repository.
+--
 
 local function s(v)
   if type(v) == "string" and v ~= "" then return v end

@@ -1,3 +1,4 @@
+--
 -- Exercise inclusion shortcode.
 --
 -- Usage: {{< exercise KIND FILENAME TIME >}}
@@ -9,6 +10,7 @@
 -- The H1 heading in the included file is stripped and replaced with an H3
 -- (book) or H2 (slides) heading; for book output the time is appended to the
 -- title.
+--
 
 local function exercise(args, kwargs, meta)
   local rel = pandoc.utils.stringify(args[1])

@@ -1,7 +1,7 @@
--- Line-count shortcode.
 --
+-- Count lines in a file inclusion.
 -- Usage: {{< linecount path/to/file >}}
--- Counts the lines in a file (relative to the project root) and emits the number.
+--
 
 local root = quarto.project.directory or "."
 

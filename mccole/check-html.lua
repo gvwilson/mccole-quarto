@@ -1,10 +1,14 @@
--- check-html.lua — basic accessibility checks on the generated HTML.
+--
+-- Basic accessibility checks on the generated HTML.
+--
 -- Usage: lua check-html.lua HTML_FILE...
+--
 -- Parses each file with pandoc.read(_, "html") and reports:
---   * headings that skip a level
---   * images with no alt text (unless role=presentation or aria-hidden)
---   * links with no visible text and no aria-label/title
---   * aria-labelledby / describedby / controls / owns referencing a missing id
+-- * headings that skip a level
+-- * images with no alt text (unless role=presentation or aria-hidden)
+-- * links with no visible text and no aria-label/title
+-- * aria-labelledby / describedby / controls / owns referencing a missing id
+--
 
 local script_dir = arg[0] and arg[0]:match("^(.*)/") or "."
 package.path = script_dir .. "/?.lua;" .. package.path

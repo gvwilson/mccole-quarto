@@ -1,11 +1,12 @@
--- nav.lua
--- Read chapters and appendices from _quarto.yml and expose them to the
--- HTML template as "chapters" and "appendices" (raw HTML nav lists),
--- "home" (a page-relative path to the site index), and "heading" (the
--- current page's title, used for the <title> element). The page heading
--- is also prepended to the document body as a raw H1 so it renders above
--- the content. Links are prefixed with "../" for pages nested a directory
--- deep, so they resolve without JavaScript.
+--
+-- Read chapters and appendices from _quarto.yml and expose them to the HTML
+-- template as "chapters" and "appendices" (raw HTML nav lists), "home" (a
+-- page-relative path to the site index), and "heading" (the current page's
+-- title, used for the <title> element). The page heading is also prepended to
+-- the document body as a raw H1 so it renders above the content. Links are
+-- prefixed with "../" for pages nested a directory deep, so they resolve
+-- without JavaScript.
+--
 
 local function read_file(path)
   local f = io.open(path, "r")
@@ -17,8 +18,8 @@ end
 
 -- Collect the `- <path>` entries under `key:` (a list indented below the
 -- key). Stops at the first non-list, non-blank line at or above the key's
--- indentation. Good enough for the simple `book: chapters:/appendices:`
--- lists this template uses.
+-- indentation. Good enough for the simple `book: chapters:/appendices:` lists
+-- this template uses.
 local function extract_list(yaml, key)
   local result = {}
   local lines = {}

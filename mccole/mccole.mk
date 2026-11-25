@@ -76,7 +76,7 @@ $(DOCS)/%.html: %.qmd
 	@sed -i '' 's:mccole/mccole-slides.css:../mccole/mccole-slides.css:g' $@
 
 ## check: check structure, spelling, etc.
-check: check-bib check-links check-glossary check-formatting check-typos
+check: check-bib check-links check-glossary check-formatting check-typos check-a11y
 
 ## check-bib: check bibliography
 check-bib:
@@ -97,6 +97,10 @@ check-formatting:
 ## check-typos: check spelling
 check-typos:
 	@-typos -c $(TYPOS_CONFIG) $(MD_SRC) $(SLIDES_SRC)
+
+## check-a11y: check accessibility
+check-a11y: site
+	@-$(LUA) $(BIN)/check-a11y.lua $(DOCS)/*.html $(DOCS)/*/*.html
 
 ## clean: remove generated and cache files
 clean:

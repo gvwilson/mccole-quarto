@@ -76,6 +76,15 @@ local function build_list(project_dir, paths, prefix)
   return '<ul class="topnav-list">' .. table.concat(items) .. '</ul>'
 end
 
+local function build_pager_link(project_dir, path, prefix, dir)
+  local href = prefix .. path:gsub("%.qmd$", ".html")
+  local title = (path == "index.qmd") and "Home" or chapter_title(project_dir, path)
+  if dir == "prev" then
+    return string.format('<a class="pager-link prev" href="%s">&larr; %s</a>', href, title)
+  end
+  return string.format('<a class="pager-link next" href="%s">%s &rarr;</a>', href, title)
+end
+
 function Pandoc(doc)
   local project_dir = quarto.project.directory or "."
   local input = "index.qmd"
@@ -119,6 +128,20 @@ function Pandoc(doc)
     doc.meta.heading = heading
     doc.meta.chapters = pandoc.RawBlock("html", build_list(project_dir, menu_chapters, prefix))
     doc.meta.appendices = pandoc.RawBlock("html", build_list(project_dir, appendices, prefix))
+
+    local all = {}
+    for _, c in ipairs(chapters) do table.insert(all, c) end
+    for _, a in ipairs(appendices) do table.insert(all, a) end
+    local idx
+    for i, p in ipairs(all) do
+      if p == rel then idx = i; break end
+    end
+    if idx and idx > 1 then
+      doc.meta.prev = pandoc.RawBlock("html", build_pager_link(project_dir, all[idx - 1], prefix, "prev"))
+    end
+    if idx and idx < #all then
+      doc.meta.next = pandoc.RawBlock("html", build_pager_link(project_dir, all[idx + 1], prefix, "next"))
+    end
 
     table.insert(doc.blocks, 1, pandoc.RawBlock("html", '<h1 class="title">' .. heading .. '</h1>'))
   end

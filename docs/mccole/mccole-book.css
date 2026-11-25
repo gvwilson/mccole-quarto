@@ -189,6 +189,21 @@ blockquote cite::before {
   content: "— ";
 }
 
+/* Page footer (previous/next pager) */
+.page-footer {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 0 1rem 2rem 1rem;
+}
+
+.pager {
+  display: flex;
+}
+
+.pager .next {
+  margin-left: auto;
+}
+
 /* Flex grid (12-column) */
 .row {
   display: flex;

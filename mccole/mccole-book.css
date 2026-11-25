@@ -40,6 +40,11 @@ nav.topnav {
   white-space: nowrap;
 }
 
+.topnav-item.disabled {
+  color: #adb5bd;
+  cursor: default;
+}
+
 a.topnav-item:hover {
   background: #e9ecef;
 }

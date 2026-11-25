@@ -23,7 +23,7 @@ $header-includes$
       <div class="topnav-menu">$appendices$</div>
     </div>
     <div class="topnav-dropdown">
-      <span class="topnav-item">Contents</span>
+      <span class="topnav-item$if(toc)$$else$ disabled$endif$">Contents</span>
 $if(toc)$
       <div class="topnav-menu">$toc$</div>
 $endif$

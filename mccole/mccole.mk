@@ -15,7 +15,8 @@ QUARTO = quarto
 TYPOS_CONFIG ?= config/typos.toml
 SLIDES_EXTRA ?=
 
-MD_SRC = $(wildcard *.qmd) $(wildcard */*.qmd)
+PAGES_SRC = $(wildcard *.qmd) $(wildcard */*.qmd)
+PAGES_DST = $(patsubst %.qmd,$(DOCS)/%.html,$(PAGES_SRC))
 SLIDES_SRC = $(wildcard slides.qmd) $(wildcard */slides.qmd)
 SLIDES_DST = $(patsubst %.qmd,$(DOCS)/%.html,$(SLIDES_SRC))
 SLIDES_FLAGS = \
@@ -80,26 +81,26 @@ check: check-bib check-links check-glossary check-formatting check-typos check-h
 
 ## check-bib: check bibliography
 check-bib:
-	@-$(LUA) $(BIN)/check-bib.lua $(BIB) $(MD_SRC)
+	@-$(LUA) $(BIN)/check-bib.lua $(BIB) $(PAGES_SRC)
 
 ## check-links: check Markdown links
 check-links:
-	@-$(LUA) $(BIN)/check-links.lua $(LINKS) $(MD_SRC)
+	@-$(LUA) $(BIN)/check-links.lua $(LINKS) $(PAGES_SRC)
 
 ## check-glossary: check glossary references
 check-glossary:
-	@-$(LUA) $(BIN)/check-glossary.lua $(GLOSSARY) $(MD_SRC)
+	@-$(LUA) $(BIN)/check-glossary.lua $(GLOSSARY) $(PAGES_SRC)
 
 ## check-formatting: check include formatting
 check-formatting:
-	@-$(LUA) $(BIN)/check-formatting.lua $(MD_SRC)
+	@-$(LUA) $(BIN)/check-formatting.lua $(PAGES_SRC)
 
 ## check-typos: check spelling
 check-typos:
-	@-typos -c $(TYPOS_CONFIG) $(MD_SRC) $(SLIDES_SRC)
+	@-typos -c $(TYPOS_CONFIG) $(PAGES_SRC) $(SLIDES_SRC)
 
 ## check-html: check accessibility
-check-html: site
+check-html:
 	@-$(LUA) $(BIN)/check-html.lua $(DOCS)/*.html $(DOCS)/*/*.html
 
 ## clean: remove generated and cache files

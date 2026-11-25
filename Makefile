@@ -3,4 +3,6 @@ include mccole/mccole.mk
 
 ## check-fixtures: run the HTML checker on fixtures
 check-fixtures:
-	$(LUA) $(BIN)/check-html.lua fixtures/*.html
+	@$(LUA) $(BIN)/check-html.lua fixtures/*.html
+
+## ---: ---

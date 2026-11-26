@@ -30,6 +30,8 @@ Math: $\sqrt{x^2 + y^2}$
 
 {{< inc intro/example.html mark=main >}}
 
+{{< inc intro/example.json mark=main >}}
+
 {{< inc intro/example.out >}}
 
 ## Columns

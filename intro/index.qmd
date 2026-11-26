@@ -18,11 +18,17 @@ Bibliographic citation: [@Haberman2023]
 
 Math: $\sqrt{x^2 + y^2}$
 
-{{< inc intro/example.py >}}
+{{< inc intro/example.py mark=main >}}
 
-{{< inc intro/example.sql >}}
+{{< inc intro/example.sh mark=main >}}
 
-{{< inc intro/example.sh >}}
+{{< inc intro/example.sql mark=main >}}
+
+{{< inc intro/example.js mark=main >}}
+
+{{< inc intro/example.css mark=main >}}
+
+{{< inc intro/example.html mark=main >}}
 
 {{< inc intro/example.out >}}
 

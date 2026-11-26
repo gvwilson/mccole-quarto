@@ -1,6 +1,8 @@
 metadata-files:
   - mccole/mccole.yml
 
+include-forma: true
+
 book:
   title: "McCole Quarto Template"
   repo-url: https://github.com/gvwilson/mccole-quarto

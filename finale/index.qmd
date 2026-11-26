@@ -2,3 +2,46 @@
 subtitle: "what we've seen and where to go next"
 ---
 # Conclusion
+
+These widgets are rendered by `mccole/forma.js`, which a project loads by
+setting `include-forma: true` in `_quarto.yml`.
+
+::: {.forma-multiple-choice}
+Which of these is a fruit?
+
+Apple
+: Correct — an apple is a fruit.
+
+Carrot
+: A vegetable, not a fruit.
+:::
+
+::: {.forma-flashcard}
+HTML
+: HyperText Markup Language
+
+CSS
+: Cascading Style Sheets
+
+SQL
+: Structured Query Language
+:::
+
+::: {.forma-ordering}
+Arrange these units from smallest to largest:
+
+1. byte
+2. kilobyte
+3. megabyte
+4. gigabyte
+:::
+
+::: {.forma-labeling}
+Label each item:
+
+| Item | Labels |
+|------|--------|
+| Apple | fruit, food |
+| Car | vehicle |
+| Rose | plant, flower |
+:::

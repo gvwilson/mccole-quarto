@@ -17,6 +17,6 @@ format: revealjs
 
 Math: $\sqrt{x^2 + y^2}$
 
-{{< inc intro/example.py >}}
+{{< inc intro/example.py mark=main >}}
 
-{{< inc intro/example.sql >}}
+{{< inc intro/example.sql mark=main >}}
